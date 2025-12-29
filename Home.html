@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Quản Trị Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .nav-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col">
+
+    <header class="bg-white border-b border-slate-200 py-6 px-8">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight">Hệ Thống Admin</h1>
+            <button onclick="window.location.href='login.html'"
+                class="text-sm font-bold text-red-500 hover:text-red-600 transition-colors">
+                Đăng xuất
+            </button>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-6">
+        <div class="max-w-6xl w-full">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Tổng quan hệ thống</h2>
+                <p class="text-slate-500">Lựa chọn mục quản lý để tiếp tục công việc</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                <a href="account-management.html"
+                    class="nav-card bg-white p-8 rounded-[32px] border border-slate-200 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        👤</div>
+                    <h3 class="text-xl font-bold text-slate-800">Quản lý Tài khoản</h3>
+                    <p class="text-slate-500 mt-2 text-sm leading-relaxed">Kích hoạt/Vô hiệu hóa user và danh sách
+                        Mentor.</p>
+                </a>
+
+                <a href="business-management.html"
+                    class="nav-card bg-white p-8 rounded-[32px] border border-slate-200 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        📈</div>
+                    <h3 class="text-xl font-bold text-slate-800">Quản lý Kinh doanh</h3>
+                    <p class="text-slate-500 mt-2 text-sm leading-relaxed">Định giá dịch vụ, xem báo cáo doanh thu và
+                        đơn hàng.</p>
+                </a>
+
+                <a href="content-management.html"
+                    class="nav-card bg-white p-8 rounded-[32px] border border-slate-200 flex flex-col items-center text-center">
+                    <div
+                        class="w-16 h-16 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-2xl mb-6">
+                        📝</div>
+                    <h3 class="text-xl font-bold text-slate-800">Quản lý Nội dung</h3>
+                    <p class="text-slate-500 mt-2 text-sm leading-relaxed">Kiểm duyệt phản hồi và hỗ trợ người dùng.</p>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 text-center text-slate-400 text-sm">
+        <p>© 2025 Hệ thống Admin - Kết nối toàn diện</p>
+    </footer>
+    <script>
+        if (user.role === 'Mentor') {
+            window.location.href = 'mentor-home.html';
+        }
+    </script>
+    <script src="auth.js"></script>
+    script>Auth.checkAccess('Admin');</script>
+
+
+</body>
+
+</html>
